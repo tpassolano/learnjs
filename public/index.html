@@ -12,11 +12,37 @@
   <script src='/app.js'></script>
   <style type="text/css" media="all">
     body {
-      margin-top: 30px;
+      margin-top: 60px;
     }
     
     .templates {
       display: none;
+    }
+    
+    .fixed-width-text {
+      font-family: "Consolas", "Courier New", monospace
+    }
+    
+    .no-select {
+      user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      -moz-user-select: none;
+    }
+    
+    .nav-container {
+      padding-left: 40px;
+      background: #666;
+    }
+    
+    .nav-container a {
+      color: white;
+    }
+    
+    .fixed-top {
+      position: fixed;
+      top: 0px;
+      z-index: 1024;
     }
     
     .inline-list {
@@ -29,19 +55,6 @@
       margin: 0 20px 0 0;
     }
     
-    .fixed-top {
-      position: fixed;
-      top: 0px;
-      z-index: 1024;
-    }
-    
-    .no-select {
-      user-select: none;
-      -webkit-user-select: none;
-      -ms-user-select: none;
-      -moz-user-select: none;
-    }
-    
     .hover-links a {
       text-decoration: none;
     }
@@ -50,15 +63,17 @@
       text-decoration: underline;
     }
     
-    .nav-container {
-      padding-left: 40px;
-      background: #666;
+    .navbar-padding {
+      padding-top: 7px;
+      display: inline-block;
     }
     
-    .nav-container a {
-      color: white;
+    .text-lg {
+      font-size: 32px;
     }
   </style>
+  <meta name="google-signin-client_id" content="892337341623-4gpvdk7rhv97lq5ghri23j69f2tc59pd.apps.googleusercontent.com" />
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 
 <body>
@@ -68,7 +83,16 @@
         <li><a class='text-lg' href="#">LearnJS</a></li>
         <li><a href="#problem-1">Start</a></li>
       </ul>
+      <div class='four columns signin-bar'>
+        <span class='navbar-padding u-pull-right'>
+          <span class="g-signin2" data-onsuccess="googleSignIn"></span>
+        </span>
+      </div>
+      <div class='profile-link navbar-padding-lg'>
+      <a href="#profile"></a>
     </div>
+    </div>
+    
     <div class='view-container container'>
     </div>
     <div class='templates'>
@@ -82,6 +106,10 @@
             <img src='/images/HeroImage.jpg' />
           </div>
         </div>
+      </div>
+      <div class='profile-view'>
+        <h3>Your Profile</h3>
+        <div class='email'></div>
       </div>
       <div class='problem-view'>
         <h3 class='title'></h3>
