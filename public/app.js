@@ -75,7 +75,9 @@ learnjs.problemView = function (data) {
 
 learnjs.showView = function (hash) {
   var routes = {
-    '#problem': learnjs.problemView
+    '#problem': learnjs.problemView,
+    '#': learnjs.landingView,
+    '': learnjs.landingView
   };
   var hashParts = hash.split('-');
   var viewFn = routes[hashParts[0]];
@@ -84,7 +86,14 @@ learnjs.showView = function (hash) {
   }
 }
 
-learnjs.template = function (name) { return $('.templates .' + name).clone(); }
+learnjs.template = function (name) 
+{ 
+  return $('.templates .' + name).clone();
+}
+
+learnjs.landingView = function(){
+  return learnjs.template('landing-view');
+}
 
 learnjs.appOnReady = function () {
   window.onhashchange = function () {
