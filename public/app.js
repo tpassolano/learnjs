@@ -10,7 +10,7 @@
 "use strict";
 
 var learnjs = {
-  poolId: 'us-east-1:8e987fa3-8315-45d3-9478-e9a0435e0882'
+  poolId: '<!-- conito Identity Pool Id here -->'
 };
 
 learnjs.identity = new $.Deferred();

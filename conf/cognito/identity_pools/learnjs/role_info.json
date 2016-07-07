@@ -11,7 +11,7 @@
                     "Effect": "Allow",
                     "Condition": {
                         "StringEquals": {
-                            "cognito-identity.amazonaws.com:aud": "us-east-1:8e987fa3-8315-45d3-9478-e9a0435e0882"
+                            "cognito-identity.amazonaws.com:aud": "<!-- conito Identity Id here -->"
                         },
                         "ForAnyValue:StringLike": {
                             "cognito-identity.amazonaws.com:amr": "authenticated"
